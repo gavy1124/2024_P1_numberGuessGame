@@ -1,8 +1,8 @@
 // 1. 랜덤숫자 만들기
 // 2. go버튼 동작
 // 2-1 . 결과 나오기 ( up, down, 정답)
-// reset버튼 동작
-
+// 3. reset버튼 동작
+// 4. 1~100사이의 숫자만 나오게 하기
 
 
 let randomNum = 0;
@@ -36,6 +36,12 @@ function reset(){
 function go() {
     let userNum = userInput.value
     //체크 console.log(userNum)
+
+    if (userNum > 100 || userNum < 1){
+        result.textContent = "1~100사이 숫자를 입력바랍니다."
+        return;
+    }
+
 
     if (userNum > randomNum) {
         result.textContent = "Down~~~"
