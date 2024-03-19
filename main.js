@@ -3,15 +3,15 @@
 // 2-1 . 결과 나오기 ( up, down, 정답)
 // 3. reset버튼 동작
 // 4. 1~100사이의 숫자만 나오게 하기
-
+// 5. 남은 회수 표시 및 차감시키기
 
 let randomNum = 0;
 let userInput = document.getElementById("userInput")
 let goBtn = document.getElementById("goBtn")
 let result = document.getElementById("result")
 let resetBtn = document.getElementById("resetBtn")
-
-
+let chance = document.getElementById("chance")
+let chacneNum = 5;
 
 
 //ㅇ
@@ -36,13 +36,13 @@ function reset(){
 function go() {
     let userNum = userInput.value
     //체크 console.log(userNum)
-
     if (userNum > 100 || userNum < 1){
         result.textContent = "1~100사이 숫자를 입력바랍니다."
         return;
     }
-
-
+    
+    
+    chacneNum --;
     if (userNum > randomNum) {
         result.textContent = "Down~~~"
     } else if (userNum < randomNum) {
@@ -50,6 +50,7 @@ function go() {
     } else if (userNum == randomNum) {
         result.textContent = "♨ 정답 ♨"
     }
+    chance.textContent = (`남은기회 : ${chacneNum}`)
 }
 
 
