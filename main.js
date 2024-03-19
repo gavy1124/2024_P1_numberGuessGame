@@ -39,7 +39,7 @@ function reset(){
     random()
     chanceNum = 5;
     chance.textContent = "남은기회 : 5";
-    console.log(chanceNum)
+    result.textContent = "";
     history = []
 }
 
@@ -50,8 +50,7 @@ function go() {
     
 
     let userNum = userInput.value
-    //체크 console.log(userNum)
-    if (userNum > 100 || userNum < 1 ){
+        if (userNum > 100 || userNum < 1 ){
         result.textContent = "1~100사이 숫자를 입력바랍니다."
         return;
     }
